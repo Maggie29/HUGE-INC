@@ -5,7 +5,7 @@ nav{
   color: #fff;
   height: 80px;
   z-index: 1000;
-  max-top: 0;
+  margin-top: 0;
   position: fixed;
   padding-top: 0px;
   background: none;
@@ -20,7 +20,7 @@ nav{
   left : 0;
   top: -4px;
   width: 70px;
-  height: 74%;
+  height: 74px;
   padding: 0.4% 2%;
   text-align: left;
   background-position: 50% 50%;
@@ -28,12 +28,39 @@ nav{
   background-image: url(http://www.hugeinc.com/content/images/util/logo.png);
 }
 .menu{
+  position: absolute;
   top: 0;
   right: 0;
   height: 4px;
   width: 24px;
   text-align: right;
-  margim: 2rem 2rem;
+  margin: 2rem 2rem;
   background: #ec008c;
   transition: all 0.3s;
+}
+.menu:before,
+.menu:after{
+  content: '';
+  width: 24px;
+  height: 4px;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  background: #ec008c;
+  transition: all 0.3s;
+}
+.menu:before{
+  top: -8px;
+}
+.menu:after{
+  top: 8px;
+}
+#toggle:hover {
+  transition: top 0.4s;
+}
+#toggle:hover .menu:before {
+  top: -10px;
+}
+#toggle:hover .menu:after {
+  top: 10px;
 }
